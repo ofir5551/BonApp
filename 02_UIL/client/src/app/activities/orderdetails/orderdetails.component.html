@@ -1,0 +1,12 @@
+<div class="card">
+    <h4 class="card-header text-center"><i class="fa fa-shopping-cart fa-2x"></i> Order Details</h4>
+    <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted">{{currentOrder.date}} : {{currentOrder.time}}</h6>
+        <ul>
+            <li class="input-group-addon" *ngFor="let item of currentOrder.items">Item : {{item.name}} x{{item.quantity}} : {{item.price}}₪</li>
+        </ul>
+        <hr>
+        <h5>Total : {{currentOrder.totalPrice}}₪</h5>
+    </div>
+
+</div>

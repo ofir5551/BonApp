@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/">BonApp'</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active">
+          <a class="nav-item nav-link" routerLink="/home">Home</a>
+        </li>
+        <li routerLinkActive="active">
+          <a class="nav-item nav-link" routerLink="/order">Order Now</a>
+        </li>
+        <li routerLinkActive="active" *ngIf="isAuthenticated">
+          <a class="nav-item nav-link" routerLink="/history">Order History</a>
+        </li>
+        <li routerLinkActive="active" *ngIf="!isAuthenticated">
+          <a class="nav-item nav-link" routerLink="/login">Login</a>
+        </li>
+        <li routerLinkActive="active" *ngIf="!isAuthenticated">
+          <a class="nav-item nav-link" routerLink="/signup">Sign Up</a>
+        </li>
+        <li routerLinkActive="active" *ngIf="isAdmin">
+          <a class="nav-item nav-link" routerLink="/activities"
+            >Active Orders</a
+          >
+        </li>
+        <li routerLinkActive="active" *ngIf="isAdmin">
+          <a class="nav-item nav-link" routerLink="/controladmin"
+            >Control Admin</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div *ngIf="isAuthenticated">
+    <app-notifications></app-notifications>
+  </div>
+
+  <div class="navbar-text">
+    <span *ngIf="userName">Welcome Back, {{ userName }}!</span>
+    <span *ngIf="!userName">Hello, guest!</span>
+  </div>
+
+  <ul class="nav navbar-nav navbar-right">
+    <li *ngIf="isAuthenticated">
+      <a (click)="onLogout()">Logout</a>
+    </li>
+  </ul>
+</nav>

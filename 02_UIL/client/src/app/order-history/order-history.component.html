@@ -1,0 +1,13 @@
+<div class="row" *ngIf="orderHistory.length == 0">
+  <h1 class="mx-auto">There are no completed orders yet!</h1>
+</div>
+<div class="row order-now" *ngIf="orderHistory.length == 0">
+    <h1 class="mx-auto" (click)="onOrderNow()">Order now</h1>
+  </div>
+
+<div class="row">
+  <app-history-item
+    *ngFor="let item of orderHistory"
+    [order]="item"
+  ></app-history-item>
+</div>

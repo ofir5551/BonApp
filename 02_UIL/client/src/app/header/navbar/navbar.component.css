@@ -1,0 +1,9 @@
+.navbar-text {
+    color: white;
+}
+
+.navbar-right {
+    color: white;
+    margin-left: 2%;
+    cursor: pointer;
+}

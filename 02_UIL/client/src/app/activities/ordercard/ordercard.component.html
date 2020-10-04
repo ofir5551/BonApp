@@ -1,0 +1,7 @@
+<div class="frb">
+    <input type="radio" [attr.id]='index' name="card" [value]='index' (change)="ChangeDetails(order)" [checked]="(index === 1)">
+    <label [attr.for]='index' class="text-center w-100 p-3 m-3">
+        <p class="frb-title">Order nº{{index}}</p>
+        <p class="frb-description" *ngIf="userCard">{{ userCard.name }}</p>
+    </label>
+</div>

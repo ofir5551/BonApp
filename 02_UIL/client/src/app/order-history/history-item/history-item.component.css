@@ -1,0 +1,8 @@
+.card {
+    width: 300px;
+    height: 300px;
+}
+
+.list-group-item, .list-group {
+    display: inline-block;
+}

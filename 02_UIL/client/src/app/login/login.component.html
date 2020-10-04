@@ -1,0 +1,61 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="card text-center mb-3 form-group bg-light shadow">
+    <!-- Form Title -->
+    <div class="card-header">
+        <h1 class="font-weight-light text-uppercase"><b>LOGIN TO BONAPP'</b></h1>
+    </div>
+    <div class="card-body">
+        <!-- Email input-->
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope fa-2x"></i></span
+        ><br />
+        <input
+          formControlName="email"
+          type="email"
+          class="ml-4 form-control rounded-pill form-control-md"
+          placeholder="Email Address"
+        />
+      </div>
+      <label
+        *ngIf="
+          !signupForm.get('email').valid && signupForm.get('email').touched
+        "
+        class="text-danger"
+        >The value is not a valid email address</label
+      >
+    </div>
+
+    <!-- Password input-->
+    <div class="form-group">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-key fa-2x"></i></span
+        ><br />
+        <input
+          formControlName="password"
+          type="password"
+          class="ml-4 form-control rounded-pill form-control-md"
+          placeholder="Password"
+        />
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button
+      [disabled]="!signupForm.valid"
+      type="submit"
+      class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase"
+    >
+      Login
+    </button>
+    <p class="mt-3 font-weight-normal">
+      Don't you have an account?
+      <a routerLink="/signup"><strong>Sign Up Now</strong></a>
+    </p>
+  </div>
+</form>
+
+<!-- UX: Display loading spinner for 500ms before redirecting ------- keep? -->
+<app-loading-spinner
+  *ngIf="isLoading"
+  class="d-flex justify-content-center"
+></app-loading-spinner>

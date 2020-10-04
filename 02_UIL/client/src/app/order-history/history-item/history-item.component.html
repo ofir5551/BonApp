@@ -1,0 +1,13 @@
+<div class="card mx-2 mb-2" (click)="onReorder()">
+  <h5 class="card-header text-center">{{ order.date }} | {{ order.time }}</h5>
+  <div class="row card-body">
+    <div class="list-group">
+      <div class="list-group-item mx-2" *ngFor="let item of order.items">
+        <small >{{ item.name }}</small>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer text-center">
+    <h3>Total: {{order.totalPrice}}₪</h3>
+  </div>
+</div>

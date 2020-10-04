@@ -2,15 +2,16 @@ const mongoose = require('mongoose')
 const User = require('./user')
 
 const orderSchema = new mongoose.Schema({
-    user: {
+    customerID: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required: true
     },
     items: {    // Add validation to quantity and price so it can't be negative (add Item sub-schema?)
         type: Array,
         required: true
     },
-    isPaid: {
+    completed: {
         type: Boolean,
         default: false
     },
@@ -37,9 +38,11 @@ orderSchema.pre("save", async function (next) {
         order.totalPrice += item.price * item.quantity
     })
 
-    const today = new Date();
-    let currentDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
-    let currentTime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
+    const today = new Date()
+    // let currentDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate()
+    let currentDate = new Date().toDateString().split(' ').slice(1).join(' ')
+    // let currentTime = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
+    let currentTime = new Date().toLocaleTimeString()
 
     order.date = currentDate
     order.time = currentTime

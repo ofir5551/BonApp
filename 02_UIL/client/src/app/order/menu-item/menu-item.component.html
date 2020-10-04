@@ -1,0 +1,20 @@
+<div class="card">
+  <h5 class="card-header text-center">{{ item.name }}</h5>
+  <div class="row card-body">
+    <div class="col-md-7">
+      <p>{{ item.description }}</p>
+      <label>₪{{ item.price }}.00</label>
+    </div>
+
+    <img [src]="item.imagePath" class="img-responsive" />
+  </div>
+</div>
+
+<!-- <div class="card" style="width: 18rem;">
+  <img [src]="'https://w3.chabad.org/media/images/762/hOdO7629949.jpg'" class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div> -->

@@ -1,0 +1,53 @@
+.timeline.timeline-advanced li .timeline-date {
+  width: 75px;
+  position: absolute;
+  right: 5px;
+  top: 3px;
+  text-align: right;
+}
+.timeline li .timeline-date {
+  display: inline-block;
+  width: 100%;
+  color: #a6a6a6;
+  font-style: italic;
+  font-size: 13px;
+}
+
+/* -----------------------------------------
+     Dropdown
+  ----------------------------------------- */
+.dropdown-menu {
+  padding: 0 0 0 0;
+}
+a.dropdown-menu-header {
+  background: #f7f9fe;
+  font-weight: bold;
+  border-bottom: 1px solid #e3e3e3;
+}
+.dropdown-menu > li a {
+  padding: 10px 20px;
+}
+
+/* -----------------------------------------
+     Badge
+  ----------------------------------------- */
+
+.badge {
+  padding: 3px 5px 2px;
+  position: absolute;
+  top: 8px;
+  right: 5px;
+  display: inline-block;
+  min-width: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-align: center;
+  border-radius: 10px;
+}
+.badge-danger {
+  background-color: #db5565;
+}

@@ -1,25 +1,30 @@
 {
-  "name": "bonapp",
-  "version": "1.0.0",
-  "description": "Meal Ordering and Delivery Platform",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon ./01_BLL/src/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ofir5551/BonApp.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ofir5551/BonApp/issues"
-  },
-  "homepage": "https://github.com/ofir5551/BonApp#readme",
-  "dependencies": {
-    "bcrypt": "^4.0.1",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.15"
-  }
+    "name": "bonapp",
+    "version": "1.0.0",
+    "description": "Meal Ordering and Delivery Platform",
+    "main": "index.js",
+    "scripts": {
+        "dev": "(cd 02_UIL/client && ng build) & nodemon ./01_BLL/src/index.js",
+        "ngDev": "(cd 02_UIL/client && npm run start)"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ofir5551/BonApp.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ofir5551/BonApp/issues"
+    },
+    "homepage": "https://github.com/ofir5551/BonApp#readme",
+    "dependencies": {
+        "bcrypt": "^4.0.1",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "jquery": "^3.5.1",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.9.15",
+        "popper.js": "^1.16.1",
+        "validator": "^13.1.1"
+    }
 }

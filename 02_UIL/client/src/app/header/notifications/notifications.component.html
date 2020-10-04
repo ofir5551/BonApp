@@ -1,0 +1,43 @@
+<div class="dropdown" style="float: right; padding: 13px">
+  <a
+    href="#"
+    onclick="return false;"
+    role="button"
+    data-toggle="dropdown"
+    id="dropdownMenu1"
+    data-target="#"
+    style="float: left"
+    aria-expanded="true"
+  >
+    <!-- This is the bell icon -->
+    <i
+      (click)="onMarkNotificationsAsSeen()"
+      class="fa fa-bell-o"
+      style="font-size: 20px; float: left; color: white"
+    >
+    </i>
+  </a>
+
+  <!-- This shows how many notifications there are -->
+  <span *ngIf="unseenNotifications.length > 0" class="badge badge-danger">{{
+    unseenNotifications.length
+  }}</span>
+  <ul
+    class="dropdown-menu dropdown-menu-left pull-right"
+    role="menu"
+    aria-labelledby="dropdownMenu1"
+  >
+    <ul class="timeline timeline-sm list-group" style="width: 210px">
+      <!-- The notifications themselves -->
+      <li *ngIf="notifications.length == 0" class="list-group-item">
+        <p>There are no notifications!</p>
+      </li>
+      <li *ngFor="let notification of notifications" class="list-group-item">
+        <p>
+          <span class="badge badge-success">✓</span> {{ notification.title }}
+          <span class="timeline-date">{{ notification.date }}</span>
+        </p>
+      </li>
+    </ul>
+  </ul>
+</div>
