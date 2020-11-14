@@ -25,8 +25,9 @@ export class MenumanageritemComponent implements OnInit {
 
 
   removeItem(){
-    this.menuService.removeItemMenu(this.item._id).subscribe((res) => {console.log(res)},(errResponse) => console.log(errResponse.error.error));
-
+    this.menuService.removeItemMenu(this.item._id).subscribe((res) => {
+      this.menuService.getAllMenu();
+    },(errResponse) => console.log(errResponse.error.error));
   }
 
 }

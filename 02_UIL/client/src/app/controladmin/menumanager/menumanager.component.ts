@@ -36,6 +36,16 @@ export class MenumanagerComponent implements OnInit, OnDestroy {
       confirmButtonText: 'Next &rarr;',
       showCancelButton: true,
       progressSteps: ['1', '2', '3', '4', '5'],
+      preConfirm: (value) => {
+        if (!value) {
+          Swal.showValidationMessage(
+            `Please fill all the required fields.`
+        ) 
+      }
+      else{
+        return value
+      }
+    }
     })
       .queue([
         {

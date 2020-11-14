@@ -25,7 +25,7 @@
             </table>
             <hr />
             <h5 class="pull-left">Total: {{ currentOrder.totalPrice }}₪</h5>
-            <h5 *ngIf='currentOrder.notes'><span class="badge badge-pill badge-warning pull-right" (click)="showNote(currentOrder.notes)"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Has notes - click to show</span></h5>
+            <h5 *ngIf='currentOrder.notes'><span class="badge badge-pill badge-warning pull-right" (click)="showNote(currentOrder.notes)"> <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Order Note</span></h5>
         </div>
     </div>
 </div>
